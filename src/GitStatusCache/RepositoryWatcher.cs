@@ -7,10 +7,12 @@ namespace GitStatusCache
 {
     public class RepositoryWatcher : IRepositoryWatcher
     {
+        private readonly string _path;
         private readonly FileSystemWatcher _watcher;
 
         public RepositoryWatcher(string path)
         {
+            _path = path;
             _watcher = new FileSystemWatcher(path);
             _watcher.IncludeSubdirectories = true;
             _watcher.NotifyFilter = NotifyFilters.CreationTime | NotifyFilters.DirectoryName | NotifyFilters.FileName | NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.Size;
@@ -23,6 +25,8 @@ namespace GitStatusCache
         }
 
         public event EventHandler<string> RepositoryChanged;
+
+        public string RepositoryPath => _path;
 
         private void OnChanged(object sender, FileSystemEventArgs e)
         {
