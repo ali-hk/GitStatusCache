@@ -13,7 +13,7 @@ namespace GitStatusCache
         private readonly Dictionary<string, RepositoryWatcher> _watcherMap = new Dictionary<string, RepositoryWatcher>();
         private readonly ConcurrentDictionary<string, CachedStatus> _statusMap = new ConcurrentDictionary<string, CachedStatus>();
 
-        public bool TryGetStatus(string path, RepositoryStatus status)
+        public bool TryGetStatus(string path, out RepositoryStatus status)
         {
             if (_statusMap.TryGetValue(path, out var cachedStatus) && cachedStatus.IsValid)
             {
@@ -23,6 +23,7 @@ namespace GitStatusCache
             else
             {
                 WatchRepository(path);
+                status = null;
                 return false;
             }
         }
