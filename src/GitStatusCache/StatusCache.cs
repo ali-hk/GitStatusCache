@@ -67,7 +67,7 @@ namespace GitStatusCache
 
         private void OnRepositoryChanged(object watcherObj, string changedPath)
         {
-            if(changedPath.EndsWith("index.lock", StringComparison.OrdinalIgnoreCase))
+            if(changedPath.EndsWith("index.lock", StringComparison.OrdinalIgnoreCase) || changedPath.EndsWith(".git", StringComparison.OrdinalIgnoreCase))
             {
                 return;
             }
