@@ -14,14 +14,12 @@ namespace GitStatusCacheService.Controllers
         [HttpGet]
         public RepositoryStatus Get([FromQuery]string repoPath)
         {
-            //repoPath = @"E:\Git\git-status-cache";
             if (Program._cache.TryGetStatus(repoPath, out var status))
             {
                 return status;
             }
             else
             {
-                //Program._cache.SetStatus(repoPath, new RepositoryStatus());
                 return null;
             }
         }
