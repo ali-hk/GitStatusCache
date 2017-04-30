@@ -32,6 +32,8 @@ namespace GitStatusCache
 
         public IList<string> IndexRenamed { get; set; }
 
+        public IList<string> IndexConflicted { get; set; }
+
         public IList<string> WorkingAdded { get; set; }
 
         public IList<string> WorkingModified { get; set; }
@@ -42,11 +44,12 @@ namespace GitStatusCache
 
         public IDictionary<string, string> WorkingRenamed { get; set; }
 
+        public IList<string> WorkingConflicted { get; set; }
+
         public IList<string> WorkingUnreadable { get; set; }
 
         public IList<string> Ignored { get; set; }
 
-        public IList<string> Conflicted { get; set; }
 
         public IList<Stash> Stashes { get; set; }
     }

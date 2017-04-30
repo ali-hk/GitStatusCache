@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitStatusCache", "GitStatusCache\GitStatusCache.csproj", "{E0ED9CDF-1E94-47AF-9F18-6FDB83E3E825}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitStatusCacheService", "GitStatusCacheService\GitStatusCacheService.csproj", "{AAFD7ABB-CD7C-4226-9159-9F8A0183E386}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E0ED9CDF-1E94-47AF-9F18-6FDB83E3E825}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0ED9CDF-1E94-47AF-9F18-6FDB83E3E825}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0ED9CDF-1E94-47AF-9F18-6FDB83E3E825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAFD7ABB-CD7C-4226-9159-9F8A0183E386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAFD7ABB-CD7C-4226-9159-9F8A0183E386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAFD7ABB-CD7C-4226-9159-9F8A0183E386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAFD7ABB-CD7C-4226-9159-9F8A0183E386}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

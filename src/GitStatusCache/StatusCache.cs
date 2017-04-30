@@ -38,6 +38,11 @@ namespace GitStatusCache
                     Debug.WriteLine("Cached status wasn't the same as retrieved status, didn't update status.");
                 }
             }
+            else
+            {
+                var addStatus = new CachedStatus(true, status);
+                _statusMap.TryAdd(path, addStatus);
+            }
         }
 
         private void WatchRepository(string path)
@@ -62,6 +67,11 @@ namespace GitStatusCache
 
         private void OnRepositoryChanged(object watcherObj, string changedPath)
         {
+            if(changedPath.EndsWith("index.lock", StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
             var watcher = watcherObj as RepositoryWatcher;
             var repoPath = watcher.RepositoryPath;
             if(_statusMap.TryGetValue(repoPath, out var status))

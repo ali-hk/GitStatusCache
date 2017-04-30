@@ -13,7 +13,8 @@ namespace GitStatusCache
         public RepositoryWatcher(string path)
         {
             _path = path;
-            _watcher = new FileSystemWatcher(path);
+            var repoRootPath = Path.GetDirectoryName(path);
+            _watcher = new FileSystemWatcher(repoRootPath);
             _watcher.IncludeSubdirectories = true;
             _watcher.NotifyFilter = NotifyFilters.CreationTime | NotifyFilters.DirectoryName | NotifyFilters.FileName | NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.Size;
             _watcher.Changed += OnChanged;
