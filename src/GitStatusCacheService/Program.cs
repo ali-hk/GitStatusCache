@@ -24,7 +24,6 @@ namespace GitStatusCacheService
                 .Build();
 
             _cache = new StatusCache();
-            //_cache.TryGetStatus(@"E:\Git\git-status-cache", out var status);
 
             host.Run();
         }
