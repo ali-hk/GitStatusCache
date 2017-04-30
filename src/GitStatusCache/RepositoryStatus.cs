@@ -4,13 +4,7 @@ namespace GitStatusCache
 {
     public class RepositoryStatus
     {
-        public string Path { get; set; }
-
-        public string RepoPath { get; set; }
-
-        public string WorkingDir { get; set; }
-
-        public string State { get; set; }
+        public int Version => 1;
 
         public string Branch { get; set; }
 
@@ -28,9 +22,7 @@ namespace GitStatusCache
 
         public IList<string> IndexDeleted { get; set; }
 
-        public IList<string> IndexTypeChange { get; set; }
-
-        public IList<string> IndexRenamed { get; set; }
+        public IList<string> IndexRenamed => null;
 
         public IList<string> IndexConflicted { get; set; }
 
@@ -40,16 +32,9 @@ namespace GitStatusCache
 
         public IList<string> WorkingDeleted { get; set; }
 
-        public IList<string> WorkingTypeChange { get; set; }
-
-        public IDictionary<string, string> WorkingRenamed { get; set; }
+        public IDictionary<string, string> WorkingRenamed => null;
 
         public IList<string> WorkingConflicted { get; set; }
-
-        public IList<string> WorkingUnreadable { get; set; }
-
-        public IList<string> Ignored { get; set; }
-
 
         public IList<Stash> Stashes { get; set; }
     }
